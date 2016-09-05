@@ -1,10 +1,10 @@
 package main
 
 import (
-	"./chop"
 	"bufio"
 	"fmt"
 	"os"
+	"github.com/mcandre/go-chop"
 )
 
 func main() {
