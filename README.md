@@ -3,15 +3,11 @@
 # EXAMPLES
 
 ```
-$ make
-go build -o bin/chop cli-chop.go
-go build -o bin/chomp cli-chomp.go
-
-bin/chop < example.txt
+$ chop < example.txt
 Go Go Go
 Go Gopher
 
-bin/chomp < example.txt
+$ chomp < example.txt
 Go Go Go,
 Go Gopher!
 ```
@@ -23,3 +19,11 @@ Go Gopher!
 ## Optional
 
 * [make](https://www.gnu.org/software/make/)
+
+# INSTALL
+
+```
+$ go get github.com/mcandre/go-chop
+$ go install github.com/mcandre/go-chop/cmd/chop
+$ go install github.com/mcandre/go-chop/cmd/chomp
+```
