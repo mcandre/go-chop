@@ -23,7 +23,7 @@ Go Gopher!
 # INSTALL
 
 ```
-$ go get github.com/mcandre/go-chop
-$ go install github.com/mcandre/go-chop/cmd/chop
-$ go install github.com/mcandre/go-chop/cmd/chomp
+$ go get github.com/mcandre/go-chop/...
 ```
+
+(Yes, include the ellipsis as well, it's the magic Go syntax for downloading, building, and installing all components of a package, including any libraries and command line tools.)
