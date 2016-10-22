@@ -27,3 +27,10 @@ $ go get github.com/mcandre/go-chop/...
 ```
 
 (Yes, include the ellipsis as well, it's the magic Go syntax for downloading, building, and installing all components of a package, including any libraries and command line tools.)
+
+# COMPILE and INSTALL LOCALLY
+
+```
+$ sh -c 'cd cmd/chop && go install'
+$ sh -c 'cd cmd/chomp && go install'
+```
