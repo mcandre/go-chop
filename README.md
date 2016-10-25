@@ -41,5 +41,4 @@ Keep the code tidy:
 
 ```
 $ make lint
-...
 ```
