@@ -4,7 +4,10 @@ test:
 	chop < example.txt
 	chomp < example.txt
 
+govet:
+	go vet -v
+
 gofmt:
 	gofmt -s -w .
 
-lint: gofmt
+lint: govet gofmt

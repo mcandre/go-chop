@@ -34,3 +34,12 @@ $ go get github.com/mcandre/go-chop/...
 $ sh -c 'cd cmd/chop && go install'
 $ sh -c 'cd cmd/chomp && go install'
 ```
+
+# LINT
+
+Keep the code tidy:
+
+```
+$ make lint
+...
+```
