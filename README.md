@@ -18,9 +18,11 @@ Go Gopher!
 
 ## Optional
 
-* [make](https://www.gnu.org/software/make/)
+* [Git](https://git-scm.com)
+* [Make](https://www.gnu.org/software/make/)
+* [Bash](https://www.gnu.org/software/bash/)
 
-# INSTALL
+# INSTALL FROM REMOTE GIT REPOSITORY
 
 ```
 $ go get github.com/mcandre/go-chop/...
@@ -28,11 +30,13 @@ $ go get github.com/mcandre/go-chop/...
 
 (Yes, include the ellipsis as well, it's the magic Go syntax for downloading, building, and installing all components of a package, including any libraries and command line tools.)
 
-# COMPILE and INSTALL LOCALLY
+# INSTALL FROM LOCAL GIT REPOSITORY
 
 ```
-$ sh -c 'cd cmd/chop && go install'
-$ sh -c 'cd cmd/chomp && go install'
+$ mkdir -p $GOPATH/src/github.com/mcandre
+$ git clone git@github.com:mcandre/go-chop.git $GOPATH/src/github.com/mcandre/go-chop
+$ sh -c "cd $GOPATH/src/github.com/mcandre/go-chop/cmd/chop && go install"
+$ sh -c "cd $GOPATH/src/github.com/mcandre/go-chop/cmd/chomp && go install"
 ```
 
 # LINT
