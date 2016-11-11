@@ -3,8 +3,9 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/mcandre/go-chop"
 	"os"
+
+	"github.com/mcandre/go-chop"
 )
 
 func main() {
