@@ -40,6 +40,18 @@ $ sh -c "cd $GOPATH/src/github.com/mcandre/go-chop/cmd/chop && go install"
 $ sh -c "cd $GOPATH/src/github.com/mcandre/go-chop/cmd/chomp && go install"
 ```
 
+# TEST REMOTELY
+
+```
+$ go test github.com/mcandre/go-chop
+```
+
+# TEST LOCALLY
+
+```
+$ go test
+```
+
 # LINT
 
 Keep the code tidy:

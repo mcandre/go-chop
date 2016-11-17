@@ -5,6 +5,10 @@ import "strings"
 const LineEndingCharacters = "\r\n"
 
 func Chop(s string) string {
+	if len(s) == 0 {
+		return s
+	}
+
 	return s[:len(s)-1]
 }
 

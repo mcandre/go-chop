@@ -1,6 +1,9 @@
-all: test
+all: gotest
 
-test:
+gotest:
+	go test
+
+integration-test:
 	chop < example.txt
 	chomp < example.txt
 
