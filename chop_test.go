@@ -7,13 +7,13 @@ import (
 )
 
 func TestChopTable(t *testing.T) {
-	testCases := []struct{Expected, Input string} {
-		{ "", "" },
-		{ "", "A" },
-		{ "A", "AB" },
-		{ "A", "A\n" },
-		{ "A\r", "A\r\n" },
-		{ "\r", "\r\n" },
+	testCases := []struct{ Expected, Input string }{
+		{"", ""},
+		{"", "A"},
+		{"A", "AB"},
+		{"A", "A\n"},
+		{"A\r", "A\r\n"},
+		{"\r", "\r\n"},
 	}
 
 	for _, testCase := range testCases {
@@ -26,13 +26,13 @@ func TestChopTable(t *testing.T) {
 }
 
 func TestChompTable(t *testing.T) {
-	testCases := []struct{Expected, Input string} {
-		{ "", "" },
-		{ "A", "A" },
-		{ "AB", "AB" },
-		{ "A", "A\n" },
-		{ "A", "A\r\n" },
-		{ "", "\r\n" },
+	testCases := []struct{ Expected, Input string }{
+		{"", ""},
+		{"A", "A"},
+		{"AB", "AB"},
+		{"A", "A\n"},
+		{"A", "A\r\n"},
+		{"", "\r\n"},
 	}
 
 	for _, testCase := range testCases {
