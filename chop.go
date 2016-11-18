@@ -2,6 +2,8 @@ package chop
 
 import "strings"
 
+const Version = "0.0.1"
+
 const LineEndingCharacters = "\r\n"
 
 func Chop(s string) string {

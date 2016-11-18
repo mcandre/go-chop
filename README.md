@@ -14,6 +14,12 @@ Go Gopher
 $ chomp < example.txt
 Go Go Go,
 Go Gopher!
+
+$ chop -v
+0.0.1
+
+$ chomp -v
+0.0.1
 ```
 
 # REQUIREMENTS
