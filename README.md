@@ -3,6 +3,10 @@
 # EXAMPLES
 
 ```
+$ cat example.txt
+Go Go Go,
+Go Gopher!
+
 $ chop < example.txt
 Go Go Go
 Go Gopher
