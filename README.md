@@ -22,7 +22,11 @@ $ chomp -v
 0.0.1
 ```
 
-# REQUIREMENTS
+# DOWNLOADS
+
+https://github.com/mcandre/go-chop/releases
+
+# DEVELOPMENT REQUIREMENTS
 
 * [Go](https://golang.org) 1.7+ with [$GOPATH configured](https://gist.github.com/mcandre/ef73fb77a825bd153b7836ddbd9a6ddc)
 
@@ -60,6 +64,13 @@ $ go test github.com/mcandre/go-chop
 
 ```
 $ go test
+```
+
+# BUILD AND ARCHIVE PORTS
+
+```
+$ make build-ports
+$ ls bin/chop-0.0.1.zip
 ```
 
 # LINT
