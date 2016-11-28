@@ -22,22 +22,8 @@ goimport:
 
 lint: govet gofmt goimport
 
-build-ports:
-	sh -c "mkdir -p bin/chop-$(VERSION)/linux/amd64   && cd cmd/chop && env GOOS=linux   GOARCH=amd64 go build -o ../../bin/chop-$(VERSION)/linux/amd64/chop"
-	sh -c "mkdir -p bin/chop-$(VERSION)/linux/386     && cd cmd/chop && env GOOS=linux   GOARCH=386   go build -o ../../bin/chop-$(VERSION)/linux/386/chop"
-	sh -c "mkdir -p bin/chop-$(VERSION)/darwin/amd64  && cd cmd/chop && env GOOS=darwin  GOARCH=amd64 go build -o ../../bin/chop-$(VERSION)/darwin/amd64/chop"
-	sh -c "mkdir -p bin/chop-$(VERSION)/darwin/386    && cd cmd/chop && env GOOS=darwin  GOARCH=386   go build -o ../../bin/chop-$(VERSION)/darwin/386/chop"
-	sh -c "mkdir -p bin/chop-$(VERSION)/windows/amd64 && cd cmd/chop && env GOOS=windows GOARCH=amd64 go build -o ../../bin/chop-$(VERSION)/windows/amd64/chop.exe"
-	sh -c "mkdir -p bin/chop-$(VERSION)/windows/386   && cd cmd/chop && env GOOS=windows GOARCH=386   go build -o ../../bin/chop-$(VERSION)/windows/386/chop.exe"
-
-	sh -c "mkdir -p bin/chop-$(VERSION)/linux/amd64   && cd cmd/chomp && env GOOS=linux   GOARCH=amd64 go build -o ../../bin/chop-$(VERSION)/linux/amd64/chomp"
-	sh -c "mkdir -p bin/chop-$(VERSION)/linux/386     && cd cmd/chomp && env GOOS=linux   GOARCH=386   go build -o ../../bin/chop-$(VERSION)/linux/386/chomp"
-	sh -c "mkdir -p bin/chop-$(VERSION)/darwin/amd64  && cd cmd/chomp && env GOOS=darwin  GOARCH=amd64 go build -o ../../bin/chop-$(VERSION)/darwin/amd64/chomp"
-	sh -c "mkdir -p bin/chop-$(VERSION)/darwin/386    && cd cmd/chomp && env GOOS=darwin  GOARCH=386   go build -o ../../bin/chop-$(VERSION)/darwin/386/chomp"
-	sh -c "mkdir -p bin/chop-$(VERSION)/windows/amd64 && cd cmd/chomp && env GOOS=windows GOARCH=amd64 go build -o ../../bin/chop-$(VERSION)/windows/amd64/chomp.exe"
-	sh -c "mkdir -p bin/chop-$(VERSION)/windows/386   && cd cmd/chomp && env GOOS=windows GOARCH=386   go build -o ../../bin/chop-$(VERSION)/windows/386/chomp.exe"
-
-	sh -c "cd bin && zip -r chop-$(VERSION).zip chop-$(VERSION)/"
+port:
+	sh port.sh chop $(VERSION) bin cmd
 
 clean: clean-ports
 

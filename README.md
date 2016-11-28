@@ -69,8 +69,9 @@ $ go test
 # BUILD AND ARCHIVE PORTS
 
 ```
-$ make build-ports
-$ ls bin/chop-0.0.1.zip
+$ make port
+...
+Archived ports in bin/chop-0.0.1.zip
 ```
 
 # LINT
