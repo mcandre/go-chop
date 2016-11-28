@@ -1,6 +1,6 @@
 VERSION=0.0.1
 
-.PHONY: build-ports clean clean-ports
+.PHONY: port clean clean-ports
 
 all: gotest
 
