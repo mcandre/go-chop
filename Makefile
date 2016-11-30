@@ -23,7 +23,7 @@ goimport:
 lint: govet gofmt goimport
 
 port:
-	sh port.sh chop $(VERSION) bin cmd
+	goport -a chop -l $(VERSION)
 
 clean: clean-ports
 
