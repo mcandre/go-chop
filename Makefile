@@ -22,8 +22,13 @@ goimport:
 
 lint: govet gofmt goimport
 
-port:
-	goport -a chop -l $(VERSION)
+port: archive-ports
+
+archive-ports: bin
+	zipc -C bin "chop-$(VERSION).zip" "chop-$(VERSION)"
+
+bin:
+	gox -output="bin/{{.Dir}}-$(VERSION)/{{.OS}}/{{.Arch}}/{{.Dir}}" ./cmd...
 
 clean: clean-ports
 
