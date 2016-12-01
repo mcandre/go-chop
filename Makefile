@@ -28,7 +28,7 @@ archive-ports: bin
 	zipc -C bin "chop-$(VERSION).zip" "chop-$(VERSION)"
 
 bin:
-	gox -output="bin/{{.Dir}}-$(VERSION)/{{.OS}}/{{.Arch}}/{{.Dir}}" ./cmd...
+	gox -output="bin/chop-$(VERSION)/{{.OS}}/{{.Arch}}/{{.Dir}}" ./cmd...
 
 clean: clean-ports
 
