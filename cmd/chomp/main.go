@@ -9,7 +9,7 @@ import (
 )
 
 func versionBanner() {
-	fmt.Printf("%s %s\n", os.Args[0], chop.Version)
+	fmt.Println(os.Args[0], chop.Version)
 	os.Exit(0)
 }
 
