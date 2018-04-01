@@ -30,26 +30,20 @@ https://github.com/mcandre/go-chop/releases
 
 https://godoc.org/github.com/mcandre/go-chop
 
-# DEVELOPMENT REQUIREMENTS
+# RUNTIME REQUIREMENTS
 
-* [Go](https://golang.org) 1.7+ with [$GOPATH configured](https://gist.github.com/mcandre/ef73fb77a825bd153b7836ddbd9a6ddc)
+(None)
 
-## Optional
+# BUILDTIME REQUIREMENTS
 
-* [coreutils](https://www.gnu.org/software/coreutils/coreutils.html)
-* [make](https://www.gnu.org/software/make/)
+* [Go](https://golang.org/) 1.9+
+* [Mage](https://magefile.org/) (e.g., `go get github.com/magefile/mage`)
 * [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) (e.g. `go get golang.org/x/tools/cmd/goimports`)
 * [golint](https://github.com/golang/lint) (e.g. `go get github.com/golang/lint/golint`)
 * [errcheck](https://github.com/kisielk/errcheck) (e.g. `go get github.com/kisielk/errcheck`)
 * [nakedret](https://github.com/alexkohler/nakedret) (e.g. `go get github.com/alexkohler/nakedret`)
 * [gox](https://github.com/mitchellh/gox) (e.g. `go get github.com/mitchellh/gox`)
 * [zipc](https://github.com/mcandre/zipc) (e.g. `go get github.com/mcandre/zipc/...`)
-* [editorconfig-cli](https://github.com/amyboyd/editorconfig-cli) (e.g. `go get github.com/amyboyd/editorconfig-cli`)
-* [flcl](https://github.com/mcandre/flcl) (e.g. `go get github.com/mcandre/flcl/...`)
-* [bashate](https://github.com/openstack-dev/bashate)
-* [shlint](https://rubygems.org/gems/shlint)
-* [shellcheck](http://hackage.haskell.org/package/ShellCheck)
-
 
 # INSTALL FROM REMOTE GIT REPOSITORY
 
@@ -64,26 +58,21 @@ $ go get github.com/mcandre/go-chop/...
 ```
 $ mkdir -p $GOPATH/src/github.com/mcandre
 $ git clone https://github.com/mcandre/go-chop.git $GOPATH/src/github.com/mcandre/go-chop
-$ sh -c "cd $GOPATH/src/github.com/mcandre/go-chop/cmd/chop && go install"
-$ sh -c "cd $GOPATH/src/github.com/mcandre/go-chop/cmd/chomp && go install"
+$ cd "$GOPATH/src/github.com/mcandre/go-chop"
+$ git submodule update --init --recursive
+$ go install ./...
 ```
 
-# TEST REMOTELY
+# INTEGRATION TEST
 
 ```
-$ go test github.com/mcandre/go-chop
-```
-
-# TEST LOCALLY
-
-```
-$ go test
+$ mage test
 ```
 
 # PORT
 
 ```
-$ make port
+$ mage port
 ```
 
 # LINT
@@ -91,9 +80,5 @@ $ make port
 Keep the code tidy:
 
 ```
-$ make lint
+$ mage lint
 ```
-
-# GIT HOOKS
-
-See `hooks/`.
