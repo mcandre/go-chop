@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
-	"strings"
 
 	"github.com/magefile/mage/mg"
 	"github.com/mcandre/go-chop"
@@ -87,24 +86,22 @@ func Lint() error {
 // portBasename labels the artifact basename.
 var portBasename = fmt.Sprintf("chop-%s", chop.Version)
 
-// Port archives build artifacts.
-func Port() error { mg.Deps(Gox); return mageextras.Archive(portBasename, artifactsPath) }
+// repoNamespace identifies the Go namespace for this project.
+var repoNamespace = "github.com/mcandre/go-chop"
 
-// Gox cross-compiles Go binaries.
-func Gox() error {
-	return mageextras.Gox(
+// Goxcart cross-compiles Go binaries with additional targets enabled.
+func Goxcart() error {
+	return mageextras.Goxcart(
 		artifactsPath,
-		strings.Join(
-			[]string{
-				portBasename,
-				"{{.OS}}",
-				"{{.Arch}}",
-				"{{.Dir}}",
-			},
-			mageextras.PathSeparatorString,
-		),
+		"-repo",
+		repoNamespace,
+		"-banner",
+		portBasename,
 	)
 }
+
+// Port builds and compresses artifacts.
+func Port() error { mg.Deps(Goxcart); return mageextras.Archive(portBasename, artifactsPath) }
 
 // Install builds and installs Go applications.
 func Install() error { return mageextras.Install() }

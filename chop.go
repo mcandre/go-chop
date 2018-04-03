@@ -4,7 +4,7 @@ package chop
 import "strings"
 
 // Version is semver.
-const Version = "0.0.1"
+const Version = "0.0.2"
 
 // LineEndingCharacters lists some common line ending characters.
 const LineEndingCharacters = "\r\n"
